@@ -1,38 +1,282 @@
-.App {
-  text-align: center;
+/* Setting custom color vars*/
+:root {
+  --mygray: #B9B1be;
+  --myyellow: #E3E3BA;
+  --mylightyellow: #fef9c7;
+  --mydarkgreen: #3B4839;
+  --mylightblue: #93B7BE;
+  ffont-family: 'Bai Jamjuree', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  font-family: 'Compacta';
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Includes title and navbar */
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100px;
+  background-color: #00251a;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: solid 4px #E3E3BA;
+}
+
+#header-img {
+  height: 60px;
+  margin: 0px 10px;
+  border-radius: 90px;
+}
+
+.page-title {
+  margin-right: auto;
+  padding: 5px 10px;
+  display: inline-flex;
+}
+
+.page-title h2 {
+  font-size: 25px;
   color: white;
+  padding: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.page-title h3 {
+  font-size: 15px;
+  color:rgb(189, 189, 189);
+  margin-top: -3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav {
+  float: right;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 30px 10px;
+}
+
+.main-nav li a {
+  color: #e0f2f1;
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.main-nav li a:hover {
+  color: rgb(189, 189, 189);
+  text-decoration: underline black 2px;
+}
+
+.banner {
+  margin-top: 70px;
+  padding-top: 30px;
+  width: 100%;
+  height: 75px;
+  background-color: #E3E3BA;
+  position: relative
+}
+
+.banner h1 {
+  padding:10 px;
+  bottom: 15px;
+  right: 15px;
+  font-size: 30px;
+  color:black;
+}
+
+/*set text color and alignment for full main div*/
+main {
+  text-align: center;
+  color: var(--mydarkgreen);
+  padding: 40px 90px 70px;
+  margin-top: 50px;
+}
+
+main h2 {
+  color: black;
+  font-size: 20px;
+  padding: 20px 0px;
+}
+
+main article {
+  padding: 10px;
+}
+
+#about-me {
+  padding: 20px 25%;
+  font-size: 20px;
+  margin-top: -50px;
+}
+
+.proj-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.proj-container figure {
+  display: flex; 
+  margin: 25px 10px;
+  height: 225px;
+  max-width: 370px;
+}
+
+.proj-container .card {
+  position: relative;
+  border: 5px solid var(--mydarkgreen);
+  border-radius: 10px;
+}
+
+.proj-ss {
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+}
+
+/*background image will appear lighter until hovered over*/
+.card:hover {
+  box-shadow: 0 0 8px rgba(0, 38, 70, 0.6)
+}
+
+.card img:hover {
+  opacity: 1.0;
+}
+
+/*Placing headings over project image bottom left corners */
+.card h3 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color:#39796b;
+  padding: 12px 12px;
+  border-top-right-radius: 8px;
+  font-size: 16px;
+}
+
+.proj-gh {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+}
+
+#contact form {
+  padding: 15px;
+  color: #cbdbd1;
+  background-color: var(--mydarkgreen);
+  border: solid var(--mydarkgreen) 1px;
+  border-radius: 8px;
+  height: 325px;
+  width: 350px;
+  margin: auto;
+}
+
+#contact div {
+  padding: 3px;
+}
+
+#contact input {
+  height: 25px;
+  width: 215px;
+  margin: 3px;
+}
+
+#message {
+  height: 125px;
+  width: 280px;
+  margin: 5px;
+}
+
+#contact h4 {
+  padding: 20px 0px 10px;
+  color: black;
+}
+
+#contact li {
+  list-style-type: none;
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+}
+
+#contact .icon {
+  display: inline-block;
+  padding: 15px 8px 0px;
+}
+
+#resumeimg {
+  margin: 40px 0px 5px;
+  height: 310px;
+  width: 250px;
+  border: solid 5px darkblue;
+  border-radius: 10px;
+  opacity: 0.75;
+}
+
+#resumeimg:hover {
+  opacity: 1.0;
+  box-shadow: 0 0 8px rgba(0, 28, 51, 0.6);
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  padding: 10px;
+  background-color: var(--mydarkgreen);
+  border-top: 4px solid #E3E3BA;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+}
+
+
+
+/* Media Queries for resizing screen*/
+@media only screen and (max-width: 700px) {
+  header {
+      height: 120px;
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    margin-top: 80px;
+  }
+
+  /*bring nav bar below page title*/
+  .main-nav li {
+      margin: 10px 5px;
+  }
+
+  .banner {
+    margin-top: 120px;
+    width: 100%;
+    height: 90px;
+    background-color: #E3E3BA;
+    position: relative
+  }
+
+  /*make text smaller on smaller screens*/
+  #about-me {
+    font-family: 'Cabin', sans-serif;
+      font-size: 18px;
+      padding: 0px 40px;
+      margin-top: -75px;
+  }
+
+  .card {
+      max-height: 200px;
+      min-width: 300px;
   }
 }
